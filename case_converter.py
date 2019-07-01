@@ -86,10 +86,12 @@ def _ultra_leet_decode(encoded):
         "Y": ["`/", "φ", "¥", "'/"],
         "Z": ["≥", "7_", ">_"],
     }
+
     def leetify_word(w):
         return "".join(random.choice(leet_dict.get(c.upper(), c)) for c in w)
 
     return " ".join([leetify_word(w) for w in encoded])
+
 
 def _leet_decode(encoded):
     leet_dict = {
@@ -104,11 +106,11 @@ def _leet_decode(encoded):
         "S": "5",
         "T": "7",
     }
+
     def leetify_word(w):
         return "".join(leet_dict.get(c.upper(), c) for c in w)
 
     return " ".join([leetify_word(w) for w in encoded])
-
 
 
 def _decode(encoded, case):
