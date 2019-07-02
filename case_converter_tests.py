@@ -1,4 +1,8 @@
-# pylint: disable=missing-docstring
+"""
+Copyright (c) 2019 Emil Lynegaard
+Distributed under the MIT software license, see the
+accompanying LICENSE.md or https://opensource.org/licenses/MIT
+"""
 
 import unittest
 from case_converter import (

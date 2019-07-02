@@ -1,4 +1,8 @@
 """
+Copyright (c) 2019 Emil Lynegaard
+Distributed under the MIT software license, see the
+accompanying LICENSE.md or https://opensource.org/licenses/MIT
+
 Convert between programming naming conventions.
 Supports:
     camelCase (pascalCase),
