@@ -56,4 +56,6 @@ def convert(
     """
     encoder = _get_encoder(case_from)
     decoder = _get_decoder(case_to)
-    return decoder.decode(encoder.encode(text))
+
+    encoded = encoder.encode(text)
+    return decoder.decode(encoded)

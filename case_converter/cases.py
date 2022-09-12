@@ -40,7 +40,7 @@ class CamelCase(CaseEncoderDecoder):
 
 
 class LowerCamelCase(CaseEncoderDecoder):
-    regex = re.compile("[A-Z][a-z]+")
+    regex = re.compile("[A-Z]?[a-z]+")
     names = ["camelCase", "pascalCase", "lowerCamelCase", "lowerPascalCase"]
 
     @classmethod
@@ -173,9 +173,11 @@ for cls_ in __get_subclasses(CaseDecoder):
         continue
 
     names = cls_.names
-    print(cls_)
     supports_encoder = issubclass(cls_, CaseEncoderDecoder)
     for name in names:
+        alt_name = re.sub("[ _]?(CASE|Case|case)", "", name)
         DECODERS[name] = cls_
+        DECODERS[alt_name] = cls_
         if supports_encoder:
             ENCODERS[name] = cls_
+            ENCODERS[alt_name] = cls_
